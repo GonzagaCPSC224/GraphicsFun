@@ -27,7 +27,7 @@ public class GraphicsFrame extends JFrame {
         mouseLabelPanel.add(mousePointLabel);
         getContentPane().add(mouseLabelPanel, BorderLayout.NORTH);
 
-        GraphicsPanel graphicsPanel = new GraphicsPanel();
+        GraphicsPanel graphicsPanel = new GraphicsPanel(this);
         getContentPane().add(graphicsPanel, BorderLayout.CENTER);
     }
 }

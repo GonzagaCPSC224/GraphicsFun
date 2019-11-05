@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d26a50b2-69c3-4002-94d4-32704ebd640b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GraphicsFun/GraphicsFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GraphicsFun/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GraphicsFun/GraphicsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GraphicsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsPanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
