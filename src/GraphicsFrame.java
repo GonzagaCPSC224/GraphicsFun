@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GraphicsFrame extends JFrame {
+    JLabel mouseStateLabel;
+    JLabel mousePointLabel;
 
     public GraphicsFrame() {
         super("Graphics Fun");
@@ -14,7 +16,18 @@ public class GraphicsFrame extends JFrame {
     }
 
     private void setupUI() {
+        mouseStateLabel = new JLabel("");
+        mousePointLabel = new JLabel("");
+
+        JPanel mouseLabelPanel = new JPanel();
+        mouseLabelPanel.setLayout(new GridLayout(2, 2));
+        mouseLabelPanel.add(new JLabel("Mouse State: "));
+        mouseLabelPanel.add(mouseStateLabel);
+        mouseLabelPanel.add(new JLabel("Mouse Point: "));
+        mouseLabelPanel.add(mousePointLabel);
+        getContentPane().add(mouseLabelPanel, BorderLayout.NORTH);
+
         GraphicsPanel graphicsPanel = new GraphicsPanel();
-        setContentPane(graphicsPanel);
+        getContentPane().add(graphicsPanel, BorderLayout.CENTER);
     }
 }
