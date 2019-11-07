@@ -5,9 +5,13 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
+import java.awt.geom.Rectangle2D;
 
 public class GraphicsPanel extends JPanel {
     GraphicsFrame graphicsFrame;
+    Point start = null;
+    Point end = null;
+
 
     public GraphicsPanel(GraphicsFrame parentFrame) {
         graphicsFrame = parentFrame;
@@ -36,6 +40,7 @@ public class GraphicsPanel extends JPanel {
             public void mousePressed(MouseEvent e) {
                 graphicsFrame.mouseStateLabel.setText("Pressed");
                 graphicsFrame.mousePointLabel.setText(e.getX() + " " + e.getY());
+                start = e.getPoint();
             }
 
             @Override
@@ -64,6 +69,8 @@ public class GraphicsPanel extends JPanel {
             public void mouseDragged(MouseEvent e) {
                 graphicsFrame.mouseStateLabel.setText("Dragged");
                 graphicsFrame.mousePointLabel.setText(e.getX() + " " + e.getY());
+                end = e.getPoint();
+                repaint(); // swing calls paintComponent()
             }
 
             @Override
@@ -93,6 +100,19 @@ public class GraphicsPanel extends JPanel {
         g2.setColor(Color.CYAN);
         Ellipse2D.Double ellipse = new Ellipse2D.Double(300, 300, 50, 50);
         g2.fill(ellipse);
+
+        // draw a rectangle as the user drags
+        if (start != null) {
+            // we are going to construct a Rectangle2D.Double object
+            int x = start.x;
+            int y = start.y;
+            int width = Math.abs(start.x - end.x);
+            int height = Math.abs(start.y - end.y);
+            // task: draw the rectangle
+            Rectangle2D.Double rectangle = new Rectangle2D.Double(x, y, width, height);
+            g2.draw(rectangle);
+            // challenge: keep the drawn the rectangles on the panel
+        }
 
     }
 }
